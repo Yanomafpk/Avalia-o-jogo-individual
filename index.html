@@ -1,0 +1,32 @@
+<html>
+<head>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.24.1/dist/phaser.min.js"></script>
+    <script src="scene-one.js"></script>
+    <script src="scene-two.js"></script>
+    <title> Dragon fire</title> 
+    <style>body { display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }</style>
+</head>
+<body>
+    <div id="game"></div>
+
+    <script>
+        const phaserConfig = {
+            type: Phaser.AUTO,
+            parent: "game",
+            width: 800,
+            height: 600,
+            backgroundColor: "#5DACD8",
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 300 },
+                    debug: false 
+                }
+            },
+            scene: [ SceneOne, SceneTwo]
+        };
+
+        const game = new Phaser.Game(phaserConfig);
+    </script>
+</body>
+</html>
